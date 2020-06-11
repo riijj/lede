@@ -116,17 +116,17 @@ jobs:
           # 固件压缩:
           cat >> .config <<EOF
           CONFIG_TARGET_IMAGES_GZIP=y
+          CONFIG_TARGET_ROOTFS_TARGZ=y
           EOF
 
           # 编译UEFI固件:
-          # cat >> .config <<EOF
-          # CONFIG_EFI_IMAGES=y
-          # EOF
-          
-          # 编译ImageBuilder 
           cat >> .config <<EOF
-          CONFIG_IB=y
-          CONFIG_IB_STANDALONE=y
+          CONFIG_EFI_IMAGES=y
+          EOF
+          
+          # 编译SDK
+          cat >> .config <<EOF
+          CONFIG_SDK=y
           EOF
           
           # IPv6支持:
@@ -144,6 +144,8 @@ jobs:
           CONFIG_PACKAGE_kmod-fs-ntfs=y
           CONFIG_PACKAGE_kmod-fs-squashfs=y
           CONFIG_PACKAGE_kmod-usb-storage=y
+          CONFIG_PACKAGE_krb5-client=y
+          CONFIG_PACKAGE_krb5-libs=y
           EOF
 
           # USB3.0支持:
@@ -157,40 +159,73 @@ jobs:
 
           # 常用LuCI插件选择:
           cat >> .config <<EOF
-          # CONFIG_PACKAGE_luci-app-adbyby-plus=y
+          CONFIG_PACKAGE_luci-app-acme=y
+          CONFIG_PACKAGE_luci-app-adblock=y
+          CONFIG_PACKAGE_luci-app-advanced-reboot=y
           CONFIG_PACKAGE_luci-app-aria2=y
-          CONFIG_PACKAGE_luci-app-amule=y
+          CONFIG_PACKAGE_luci-app-asterisk=m
+          CONFIG_PACKAGE_luci-app-attendedsysupgrade=y
+          CONFIG_PACKAGE_luci-app-baidupcs-web=y
           CONFIG_PACKAGE_luci-app-cifs-mount=y
           CONFIG_PACKAGE_luci-app-cifsd=y
-          CONFIG_PACKAGE_luci-app-baidupcs-web=y
-          # CONFIG_PACKAGE_luci-app-docker=y
+          CONFIG_PACKAGE_luci-app-clamav=y
+          CONFIG_PACKAGE_luci-app-commands=y
+          CONFIG_PACKAGE_luci-app-cshark=y
+          CONFIG_PACKAGE_luci-app-diag-core=y
+          CONFIG_PACKAGE_luci-app-diskman=y
+          CONFIG_PACKAGE_luci-app-docker=y
           CONFIG_PACKAGE_luci-app-frpc=y
-          # CONFIG_PACKAGE_luci-app-kodexplorer=y
+          CONFIG_PACKAGE_luci-app-fwknopd=y
+          CONFIG_PACKAGE_luci-app-guest-wifi=y
+          CONFIG_PACKAGE_luci-app-haproxy-tcp=y
+          CONFIG_PACKAGE_luci-app-hnet=y
+          CONFIG_PACKAGE_luci-app-kodexplorer=y
+          CONFIG_PACKAGE_luci-app-lxc=y
+          CONFIG_PACKAGE_luci-app-meshwizard=y
           CONFIG_PACKAGE_luci-app-minidlna=y
-          # CONFIG_PACKAGE_luci-app-openvpn=y
-          # CONFIG_PACKAGE_luci-app-openvpn-server=y
-          CONFIG_PACKAGE_luci-app-ssr-plus=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_plugin=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
-          CONFIG_PACKAGE_luci-app-statistics=y
-          # CONFIG_PACKAGE_luci-app-ttyd=y
-          # CONFIG_PACKAGE_luci-app-v2ray-server=y
-          # CONFIG_PACKAGE_luci-app-verysync=y
+          CONFIG_PACKAGE_luci-app-n2n_v2=y
+          CONFIG_PACKAGE_luci-app-netdata=y
+          CONFIG_PACKAGE_luci-app-nfs=y
+          CONFIG_PACKAGE_luci-app-noddos=y
+          CONFIG_PACKAGE_luci-app-qos=y
+          CONFIG_PACKAGE_luci-app-rclone=y
+          CONFIG_PACKAGE_luci-app-softethervpn=y
+          CONFIG_PACKAGE_luci-app-ttyd=y
+          CONFIG_PACKAGE_luci-app-uhttpd=y
+          CONFIG_PACKAGE_luci-app-usb-printer=y
+          CONFIG_PACKAGE_luci-app-v2ray-server=y
+          CONFIG_PACKAGE_luci-app-verysync=y
+          CONFIG_PACKAGE_luci-app-vnstat=y
+          CONFIG_PACKAGE_luci-app-vpnbypass=y
+          CONFIG_PACKAGE_luci-app-watchcat=y
           CONFIG_PACKAGE_luci-app-webadmin=y
+          CONFIG_PACKAGE_luci-app-wifischedule=y
           CONFIG_PACKAGE_luci-app-wireguard=y
           CONFIG_PACKAGE_luci-app-wrtbwmon=y
-          CONFIG_PACKAGE_luci-app-zerotier=y
-          CONFIG_PACKAGE_luci-app-vnstat=y
+          CONFIG_PACKAGE_luci-lib-docker=y
+          CONFIG_PACKAGE_kmod-kvm-amd=y
+          CONFIG_PACKAGE_kmod-kvm-x86=y
           EOF
           
           # 开发环境
           cat >> .config <<EOF
+          CONFIG_PACKAGE_patch=y
+          CONFIG_PACKAGE_m4=y
+          CONFIG_PACKAGE_make=y
+          CONFIG_PACKAGE_gcc=y
           CONFIG_PACKAGE_golang=y
+          CONFIG_PACKAGE_golang-src=y
           CONFIG_PACKAGE_python=y
           CONFIG_PACKAGE_python-pip=y
+          CONFIG_PACKAGE_python3-pip=y
+          CONFIG_PACKAGE_python3-setuptools=y
           CONFIG_PACKAGE_git=y
           CONFIG_PACKAGE_openssh-sftp-server=y
+          CONFIG_PACKAGE_diffutils=y
+          CONFIG_PACKAGE_docker-ce=y
+          CONFIG_PACKAGE_containerd=y
+          CONFIG_PACKAGE_autoconf=y
+          CONFIG_PACKAGE_automake=y
           EOF
           
           # LuCI主题:
@@ -202,6 +237,7 @@ jobs:
 
           # 常用软件包:
           cat >> .config <<EOF
+          CONFIG_PACKAGE_iperf3=y
           CONFIG_PACKAGE_curl=y
           CONFIG_PACKAGE_htop=y
           CONFIG_PACKAGE_nano=y
@@ -214,6 +250,11 @@ jobs:
           CONFIG_PACKAGE_iputils-traceroute6=y
           CONFIG_PACKAGE_ntfs-3g=y
           CONFIG_PACKAGE_fdisk=y
+          CONFIG_PACKAGE_unrar=y
+          CONFIG_PACKAGE_unzip=y
+          CONFIG_PACKAGE_xz=y
+          CONFIG_PACKAGE_zip=y
+          CONFIG_PACKAGE_gzip=y
           CONFIG_PACKAGE_bzip2=y
           CONFIG_PACKAGE_trojan=y
           CONFIG_PACKAGE_binutils=y
@@ -228,7 +269,22 @@ jobs:
           CONFIG_PACKAGE_arp-scan=y
           CONFIG_PACKAGE_rsyslog=y
           CONFIG_PACKAGE_samba36-client=y
-          
+          CONFIG_PACKAGE_rclone=y
+          CONFIG_PACKAGE_rsync=y
+          CONFIG_PACKAGE_verysync=y
+          CONFIG_PACKAGE_noddos=y
+          CONFIG_PACKAGE_mtr=y
+          CONFIG_PACKAGE_meshwizard=y
+          CONFIG_PACKAGE_lrzsz=y
+          CONFIG_PACKAGE_lsof=y
+          CONFIG_PACKAGE_less=y
+          CONFIG_PACKAGE_file=y
+          CONFIG_PACKAGE_findutils-find=y
+          CONFIG_PACKAGE_findutils-locate=y
+          CONFIG_PACKAGE_findutils-xargs=y
+          CONFIG_PACKAGE_clamav=y
+          CONFIG_PACKAGE_ar=y
+          CONFIG_PACKAGE_arp-scan=y
           EOF
           
           #网卡驱动
@@ -236,6 +292,25 @@ jobs:
           CONFIG_PACKAGE_kmod-e1000=y
           CONFIG_PACKAGE_kmod-e1000e=y
           CONFIG_PACKAGE_kmod-usb-net-rndis=y
+          CONFIG_PACKAGE_kmod-rt2400-pci=y
+          CONFIG_PACKAGE_kmod-rt2500-pci=y
+          CONFIG_PACKAGE_kmod-rt2500-usb=y
+          CONFIG_PACKAGE_kmod-rt2800-mmio=y
+          CONFIG_PACKAGE_kmod-rt2800-pci=y
+          CONFIG_PACKAGE_kmod-rt2x00-mmio=y
+          CONFIG_PACKAGE_kmod-rt2x00-pci=y
+          CONFIG_PACKAGE_kmod-rt61-pci=y
+          CONFIG_PACKAGE_kmod-rt73-usb=y
+          CONFIG_PACKAGE_kmod-rtl8180=y
+          CONFIG_PACKAGE_kmod-rtl8187=y
+          CONFIG_PACKAGE_kmod-ath6kl=y
+          CONFIG_PACKAGE_kmod-ath6kl-usb=y 
+          CONFIG_PACKAGE_iwl3945-firmware=y
+          CONFIG_PACKAGE_iwl4965-firmware=y     
+          CONFIG_PACKAGE_e100-firmware=y     
+          CONFIG_PACKAGE_rt2800-pci-firmware=y
+          CONFIG_PACKAGE_rt61-pci-firmware=y
+          CONFIG_PACKAGE_rt73-usb-firmware=y          
           EOF
           
           #kernel
@@ -250,15 +325,15 @@ jobs:
           
           # 取消编译VMware镜像,生成Hyper-V镜像 :
           cat >> .config <<EOF
-          #CONFIG_VMDK_IMAGES is not set
           CONFIG_VHD_IMAGES=y
+          # CONFIG_VMDK_IMAGES is not set
           EOF
           
           # 修改固件大小
           cat >> .config <<EOF
           CONFIG_TARGET_KERNEL_PARTSIZE=512
           CONFIG_TARGET_ROOTFS_PARTSIZE=2048
-          #CONFIG_TARGET_ROOTFS_PARTNAME=""
+          # CONFIG_TARGET_ROOTFS_PARTNAME=""
           EOF
           # 
           # ========================固件定制部分结束========================
