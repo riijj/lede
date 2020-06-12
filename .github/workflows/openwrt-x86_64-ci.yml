@@ -159,8 +159,6 @@ jobs:
 
           # 常用LuCI插件选择:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_luci-app-acme=y
-          CONFIG_PACKAGE_luci-app-adblock=y
           CONFIG_PACKAGE_luci-app-advanced-reboot=y
           CONFIG_PACKAGE_luci-app-aria2=y
           CONFIG_PACKAGE_luci-app-asterisk=m
@@ -177,10 +175,8 @@ jobs:
           CONFIG_PACKAGE_luci-app-frpc=y
           CONFIG_PACKAGE_luci-app-fwknopd=y
           CONFIG_PACKAGE_luci-app-guest-wifi=y
-          CONFIG_PACKAGE_luci-app-haproxy-tcp=y
           CONFIG_PACKAGE_luci-app-hnet=y
           CONFIG_PACKAGE_luci-app-kodexplorer=y
-          CONFIG_PACKAGE_luci-app-lxc=y
           CONFIG_PACKAGE_luci-app-meshwizard=y
           CONFIG_PACKAGE_luci-app-minidlna=y
           CONFIG_PACKAGE_luci-app-n2n_v2=y
@@ -192,7 +188,6 @@ jobs:
           CONFIG_PACKAGE_luci-app-softethervpn=y
           CONFIG_PACKAGE_luci-app-ttyd=y
           CONFIG_PACKAGE_luci-app-uhttpd=y
-          CONFIG_PACKAGE_luci-app-usb-printer=y
           CONFIG_PACKAGE_luci-app-v2ray-server=y
           CONFIG_PACKAGE_luci-app-verysync=y
           CONFIG_PACKAGE_luci-app-vnstat=y
@@ -285,6 +280,7 @@ jobs:
           CONFIG_PACKAGE_clamav=y
           CONFIG_PACKAGE_ar=y
           CONFIG_PACKAGE_arp-scan=y
+          CONFIG_PACKAGE_open-vm-tools=y
           EOF
           
           #网卡驱动
