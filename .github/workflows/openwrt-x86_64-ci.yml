@@ -205,8 +205,6 @@ jobs:
           # 开发环境
           cat >> .config <<EOF
           CONFIG_PACKAGE_patch=y
-          CONFIG_PACKAGE_m4=y
-          CONFIG_PACKAGE_make=y
           CONFIG_PACKAGE_gcc=y
           CONFIG_PACKAGE_golang=y
           CONFIG_PACKAGE_golang-src=y
@@ -219,8 +217,6 @@ jobs:
           CONFIG_PACKAGE_diffutils=y
           CONFIG_PACKAGE_docker-ce=y
           CONFIG_PACKAGE_containerd=y
-          CONFIG_PACKAGE_autoconf=y
-          CONFIG_PACKAGE_automake=y
           EOF
           
           # LuCI主题:
@@ -278,7 +274,6 @@ jobs:
           CONFIG_PACKAGE_findutils-locate=y
           CONFIG_PACKAGE_findutils-xargs=y
           CONFIG_PACKAGE_clamav=y
-          CONFIG_PACKAGE_ar=y
           CONFIG_PACKAGE_arp-scan=y
           CONFIG_PACKAGE_open-vm-tools=y
           EOF
