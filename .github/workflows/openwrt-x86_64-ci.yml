@@ -270,9 +270,6 @@ jobs:
           CONFIG_PACKAGE_lsof=y
           CONFIG_PACKAGE_less=y
           CONFIG_PACKAGE_file=y
-          CONFIG_PACKAGE_findutils-find=y
-          CONFIG_PACKAGE_findutils-locate=y
-          CONFIG_PACKAGE_findutils-xargs=y
           CONFIG_PACKAGE_clamav=y
           CONFIG_PACKAGE_arp-scan=y
           CONFIG_PACKAGE_open-vm-tools=y
