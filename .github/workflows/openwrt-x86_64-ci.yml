@@ -161,14 +161,10 @@ jobs:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-app-advanced-reboot=y
           CONFIG_PACKAGE_luci-app-aria2=y
-          CONFIG_PACKAGE_luci-app-asterisk=m
-          CONFIG_PACKAGE_luci-app-attendedsysupgrade=y
           CONFIG_PACKAGE_luci-app-baidupcs-web=y
           CONFIG_PACKAGE_luci-app-cifs-mount=y
           CONFIG_PACKAGE_luci-app-cifsd=y
           CONFIG_PACKAGE_luci-app-clamav=y
-          CONFIG_PACKAGE_luci-app-commands=y
-          CONFIG_PACKAGE_luci-app-cshark=y
           CONFIG_PACKAGE_luci-app-diag-core=y
           CONFIG_PACKAGE_luci-app-diskman=y
           CONFIG_PACKAGE_luci-app-docker=y
@@ -211,7 +207,6 @@ jobs:
           CONFIG_PACKAGE_python=y
           CONFIG_PACKAGE_python-pip=y
           CONFIG_PACKAGE_python3-pip=y
-          CONFIG_PACKAGE_python3-setuptools=y
           CONFIG_PACKAGE_git=y
           CONFIG_PACKAGE_openssh-sftp-server=y
           CONFIG_PACKAGE_diffutils=y
