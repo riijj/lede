@@ -60,6 +60,7 @@ jobs:
           sed -i 's/#src-git helloworld/src-git helloworld/g' feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
+          sed -i 's/24kc/1004kc/g' ./target/linux/ramips/mt7621/target.mk
 
       - name: Generate configuration file
         run: |
@@ -297,3 +298,4 @@ jobs:
         with:
           name: OpenWrt-k2p-firmware
           path: ./bin/targets/
+          
