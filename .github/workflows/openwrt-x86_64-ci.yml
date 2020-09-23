@@ -120,9 +120,9 @@ jobs:
           EOF
 
           # 编译UEFI固件:
-          cat >> .config <<EOF
-          CONFIG_EFI_IMAGES=y
-          EOF
+          # cat >> .config <<EOF
+          # CONFIG_EFI_IMAGES=y
+          # EOF
           
           # 编译ImageBuilder 
           cat >> .config <<EOF
@@ -220,10 +220,7 @@ jobs:
           CONFIG_PACKAGE_iputils-traceroute6=y
           CONFIG_PACKAGE_ntfs-3g=y
           CONFIG_PACKAGE_fdisk=y
-          CONFIG_PACKAGE_unrar=y
           CONFIG_PACKAGE_unzip=y
-          CONFIG_PACKAGE_xz=y
-          CONFIG_PACKAGE_zip=y
           CONFIG_PACKAGE_gzip=y
           CONFIG_PACKAGE_bzip2=y
           CONFIG_PACKAGE_trojan=y
@@ -262,7 +259,7 @@ jobs:
           # 取消编译VMware镜像,生成Hyper-V镜像 :
           cat >> .config <<EOF
           CONFIG_VMDK_IMAGES=y
-          CONFIG_VHD_IMAGES=y
+          #CONFIG_VHD_IMAGES=y
           EOF
           
           # 修改固件大小
