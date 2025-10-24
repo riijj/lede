@@ -937,7 +937,7 @@ TARGET_DEVICES += xiaomi_mi-router-wr30u
 define Device/xiaomi_mi-router-wr30u-234m-nbnm
   DEVICE_VENDOR := Xiaomi
   DEVICE_MODEL := Mi Router WR30U
-  DEVICE_DTS := mt7981b-xiaomi-wr30u
+  DEVICE_DTS := mt7981b-xiaomi-wr30u-234m-nmbm
   DEVICE_DTS_DIR := ../dts
   UBINIZE_OPTS := -E 5
   BLOCKSIZE := 128k
